@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+// routing
+import { AppRoutingModule, routedComponents } from './app-routing.module';
+
+// material design 2
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -18,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     MaterialModule.forRoot()
   ],
   providers: [],
