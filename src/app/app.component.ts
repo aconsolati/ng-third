@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  views: Object[] = [
+    {
+      name: "Appointments",
+      description: "Review upcoming bookings",
+      icon: "assignment ind",
+      route: "/md"
+    },
+    {
+      name: "Hospital Cases",
+      description: "Recently admitted patients",
+      icon: "pets",
+      route: "/dashboard"
+    }
+  ];
 }

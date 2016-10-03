@@ -1,6 +1,15 @@
-<md-sidenav-layout>
+<md-sidenav-layout fullscreen>
+  
   <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
+    <md-nav-list>
+      <div *ngFor="let view of views">
+        <a md-list-item [routerLink]="[view.route]">
+          <md-icon md-list-icon>{{view.icon}}</md-icon>
+          <span md-line>{{view.name}}</span>
+          <span md-line class="secondary">{{view.description}}</span>
+        </a>
+      </div>
+    </md-nav-list>
   </md-sidenav>
   
   <md-toolbar color="primary">

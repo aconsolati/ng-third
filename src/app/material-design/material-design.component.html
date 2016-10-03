@@ -1,41 +1,37 @@
-<div class="app-content">
+<md-card>
+  <button md-button>FLAT</button>
+  <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
+  <button md-raised-button color="primary">PRIMARY RAISED</button>
+  <button md-raised-button color="accent">ACCENT RAISED</button>
+</md-card>
 
-      <md-card>
-        <button md-button>FLAT</button>
-        <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
-        <button md-raised-button color="primary">PRIMARY RAISED</button>
-        <button md-raised-button color="accent">ACCENT RAISED</button>
-      </md-card>
+<md-card>
+  <md-checkbox>Unchecked</md-checkbox>
+  <md-checkbox [checked]="true">Checked</md-checkbox>
+  <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+  <md-checkbox [disabled]="true">Disabled</md-checkbox>
+</md-card>
 
-      <md-card>
-        <md-checkbox>Unchecked</md-checkbox>
-        <md-checkbox [checked]="true">Checked</md-checkbox>
-        <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
-        <md-checkbox [disabled]="true">Disabled</md-checkbox>
-      </md-card>
-
-    <md-card>
-      <md-tab-group>
-        <md-tab>
-          <template md-tab-label>
-            Earth
-          </template>
-          <template md-tab-content>
-            <p>EARTH</p>
-          </template>
-        </md-tab>
-        <md-tab>
-          <template md-tab-label>
-            Fire
-          </template>
-          <template md-tab-content>
-            <p>FIRE</p>
-          </template>
-        </md-tab>
-      </md-tab-group>
-    </md-card>
-    
-  </div>
+<md-card>
+  <md-tab-group>
+    <md-tab>
+      <template md-tab-label>
+        Earth
+      </template>
+      <template md-tab-content>
+        <p>EARTH</p>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>
+        Fire
+      </template>
+      <template md-tab-content>
+        <p>FIRE</p>
+      </template>
+    </md-tab>
+  </md-tab-group>
+</md-card>
 
 <span class="app-action">
   <button md-fab><md-icon>check circle</md-icon></button>
