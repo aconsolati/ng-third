@@ -20,4 +20,14 @@ export class AppComponent {
       route: "/dashboard"
     }
   ];
+
+  // openDialog() {
+  //   const config = new MdDialogConfig();
+  //   config.viewContainerRef = this.vcr;
+  //   this.dialog.open(SettingsDialog, config);
+  // }
+
+  showSettings() {
+    alert("Settings");
+  }
 }
