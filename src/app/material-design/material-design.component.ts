@@ -12,4 +12,9 @@ export class MaterialDesignComponent implements OnInit {
   ngOnInit() {
   }
 
+  foods: any[] = [
+      {name: 'Pizza', rating: 'Excellent'},
+      {name: 'Burritos', rating: 'Great'},
+      {name: 'French fries', rating: 'Pretty good'},
+    ];
 }

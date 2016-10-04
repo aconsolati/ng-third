@@ -4,20 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // routing
-import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule, routedComponents } from './app-routing.module';
 
 // material design 2
 import { MaterialModule } from '@angular/material';
 
+// services
+import { HttpDemoService } from './http-demo/http-demo.service'
+
+// components
 import { AppComponent } from './app.component';
 import { MaterialDesignComponent } from './material-design/material-design.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpDemoComponent } from './http-demo/http-demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MaterialDesignComponent,
-    DashboardComponent
+    DashboardComponent,
+    HttpDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [HttpDemoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

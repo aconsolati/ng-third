@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialDesignComponent } from './material-design/material-design.component';
+import { HttpDemoComponent } from './http-demo/http-demo.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
     redirectTo: 'md',
   },
   { path: 'md', component: MaterialDesignComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'http', component: HttpDemoComponent }
 ];
 
 @NgModule({
@@ -21,5 +23,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [DashboardComponent, MaterialDesignComponent];
+//export const routedComponents = [DashboardComponent, MaterialDesignComponent];
 

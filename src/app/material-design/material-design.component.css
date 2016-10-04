@@ -24,7 +24,7 @@ md-checkbox {
   color: white;
 }*/
 
-/*.app-icon-button {
+.app-icon-button {
   box-shadow: none;
   user-select: none;
   background: none;
@@ -39,7 +39,7 @@ md-checkbox {
   padding: 0;
   text-align: left;
   text-decoration: none;
-}*/
+}
 
 .app-action {
   display: inline-block;
@@ -48,7 +48,7 @@ md-checkbox {
   right: 20px;
 }
 
-/*.app-spinner {
+.app-spinner {
   height: 30px;
   width: 30px;
   display: inline-block;
@@ -62,7 +62,7 @@ md-checkbox {
   border: 1px solid rgba(0,0,0,0.12);
   width: 350px;
   margin: 20px;
-}*/
+}
 
 .app-progress {
   margin: 20px;

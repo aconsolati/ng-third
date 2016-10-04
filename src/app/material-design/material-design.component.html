@@ -1,3 +1,4 @@
+
 <md-card>
   <button md-button>FLAT</button>
   <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
@@ -10,6 +11,38 @@
   <md-checkbox [checked]="true">Checked</md-checkbox>
   <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
   <md-checkbox [disabled]="true">Disabled</md-checkbox>
+</md-card>
+
+<md-card class="app-input-section">
+  <md-input placeholder="First name"></md-input>
+
+  <md-input #nickname placeholder="Nickname" maxlength="50">
+    <md-hint align="end">
+      {{nickname.characterCount}} / 50
+    </md-hint>
+  </md-input>
+
+  <md-input>
+    <md-placeholder>
+      <i class="material-icons app-input-icon">android</i> Favorite phone
+    </md-placeholder>
+  </md-input>
+
+  <md-input placeholder="Motorcycle model">
+    <span md-prefix>
+      <i class="material-icons app-input-icon">motorcycle</i>
+      &nbsp;
+    </span>
+  </md-input>
+</md-card>
+
+<md-card>
+  <md-list class="app-list">
+    <md-list-item *ngFor="let food of foods">
+      <h3 md-line>{{food.name}}</h3>
+      <p md-line class="demo-secondary-text">{{food.rating}}</p>
+    </md-list-item>
+  </md-list>
 </md-card>
 
 <md-card>
@@ -33,6 +66,6 @@
   </md-tab-group>
 </md-card>
 
-<span class="app-action">
+<!--<span class="app-action">
   <button md-fab><md-icon>check circle</md-icon></button>
-</span>
+</span>-->
