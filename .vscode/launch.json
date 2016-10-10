@@ -7,7 +7,14 @@
             "request": "launch",
             "url": "http://localhost:4200",
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/src",
+            "sourceMapPathOverrides": {
+                "webpack:///C:*":"C:/*"
+            },
+            "runtimeArgs": [
+                "--disable-session-crashed-bubble",
+                "--disable-infobars"
+            ]
         },
         {
             "name": "Attach to Chrome, with sourcemaps",
@@ -15,7 +22,10 @@
             "request": "attach",
             "port": 9222,
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/src",
+            "sourceMapPathOverrides": {
+                "webpack:///C:*":"C:/*"
+            }
         }
     ]
 }
