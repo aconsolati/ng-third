@@ -4,5 +4,6 @@
     "files.autoSave": "afterDelay",
 
     // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
-    "files.autoSaveDelay": 1000
+    "files.autoSaveDelay": 1000,
+    "typescript.check.workspaceVersion": false
 }

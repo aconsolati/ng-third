@@ -12,19 +12,22 @@ import { MaterialModule } from '@angular/material';
 
 // services
 import { HttpDemoService } from './http-demo/http-demo.service'
+import { ClientViewService } from './client-view/client-view.service'
 
 // components
 import { AppComponent } from './app.component';
 import { MaterialDesignComponent } from './material-design/material-design.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpDemoComponent } from './http-demo/http-demo.component';
+import { ClientViewComponent } from './client-view/client-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MaterialDesignComponent,
     DashboardComponent,
-    HttpDemoComponent
+    HttpDemoComponent,
+    ClientViewComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import { HttpDemoComponent } from './http-demo/http-demo.component';
     AppRoutingModule,
     MaterialModule.forRoot()
   ],
-  providers: [HttpDemoService],
+  providers: [
+    HttpDemoService, 
+    ClientViewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

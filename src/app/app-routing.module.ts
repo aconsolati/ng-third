@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialDesignComponent } from './material-design/material-design.component';
 import { HttpDemoComponent } from './http-demo/http-demo.component';
+import { ClientViewComponent } from './client-view/client-view.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   { path: 'md', component: MaterialDesignComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'http', component: HttpDemoComponent }
+  { path: 'http', component: HttpDemoComponent },
+  { path: 'client-view', component: ClientViewComponent }
 ];
 
 @NgModule({
