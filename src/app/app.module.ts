@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from '@angular/material';
 
 // services
+import { BlueSkyApiService } from './services/bluesky-api.service'
 import { HttpDemoService } from './http-demo/http-demo.service'
 import { ClientViewService } from './client-view/client-view.service'
 
@@ -37,6 +38,7 @@ import { ClientViewComponent } from './client-view/client-view.component';
     MaterialModule.forRoot()
   ],
   providers: [
+    BlueSkyApiService,
     HttpDemoService, 
     ClientViewService],
   bootstrap: [AppComponent]

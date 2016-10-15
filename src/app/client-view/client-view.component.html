@@ -1,19 +1,31 @@
-<p>
-  Client view works!
-</p>
-
 <md-card class="app-input-section">
-  <md-input placeholder="filter by"  [(ngModel)]='listFilter' ng-change="onFilterChange()"></md-input>
-
+    <md-input placeholder="Filter by"  [(ngModel)]='listFilter' (change)="onFilterChange()"></md-input>
 </md-card>
 
-<div class="row">
-    <div class="col-md-6">
-        <h3>Filter by: {{listFilter}}</h3>
-    </div>
-</div>
+<md-card>
+    <h3>Filter by: {{listFilter}}</h3>
 
-<div class="table-responsive">
+    <div class="table-responsive">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp full-width" *ngIf="clients && clients.length">
+            <thead>
+                <tr>
+                    <th>Client Number</th>
+                    <th>Lastname</th>
+                    <th>First</th>
+                </tr>                    
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of clients">
+                    <td>{{ client.Client_Number }}</td>
+                    <td>{{ client.Surname }}</td>
+                    <td>{{ client.First_Name }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-card>
+
+<!--<div class="table-responsive">
     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp full-width" *ngIf="clients && clients.length">
         <thead>
             <tr>
@@ -30,5 +42,5 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div>-->
 

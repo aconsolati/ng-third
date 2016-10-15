@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class HttpDemoService {
 
-  constructor(private http : Http) { }
+  //private _url = 'http://devplaybox.rxworks.com/rxapi/odata/Clients?$top=2';
+
+  constructor() { }
 
   getAll(): any[] {
     return [] = [

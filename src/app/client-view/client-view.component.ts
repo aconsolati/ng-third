@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IClient } from './client';
 import { ClientViewService } from './client-view.service';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'pm-client',
@@ -11,33 +11,34 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ClientViewComponent implements OnInit {
    
-    pageTitle: string = "Client List";
-    //clients: Observable<IClient[]>;
+    //pageTitle: string = "Client List";
+    errorMessage: string;
     clients: IClient[];
     listFilter: string;
 
-    constructor(private _clientService: ClientViewService) {
-    }
+    constructor(private _clientService: ClientViewService) {}
 
-    handleData(data : IClient[]) {
-        console.log(data);
-        this.clients = data;
-    }
+    // handleData(data : IClient[]) {
+    //     console.log(data);
+    //     this.clients = data;
+    // }
 
     ngOnInit() {
-        this._clientService.getClients(this.listFilter).subscribe(
-            data => this.handleData(data),
-            err => {} );
-        
-        console.log('In OnInit');
+        // this._clientService.getClients(this.listFilter).subscribe(
+        //     data => this.handleData(data),
+        //     err => {} );
+
+        this.getClients();
     }
 
     onFilterChange() {
-        this._clientService.getClients(this.listFilter).subscribe(
-            data => this.handleData(data),
-            err => {} );
-        
-        console.log('OnFilterChange');        
+        console.log('onFilterChange');
+        this.getClients();
     }
     
+    getClients() {
+        this._clientService.getClients(this.listFilter).subscribe(
+            clients => this.clients = clients,
+            error => this.errorMessage = <any>error ); 
+    }
 }
