@@ -6,12 +6,13 @@
     <h3>Filter by: {{listFilter}}</h3>
 
     <div class="table-responsive">
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp full-width" *ngIf="clients && clients.length">
+        <table class="full-width" *ngIf="clients && clients.length">
             <thead>
                 <tr>
                     <th>Client Number</th>
-                    <th>Lastname</th>
-                    <th>First</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Address</th>
                 </tr>                    
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                     <td>{{ client.Client_Number }}</td>
                     <td>{{ client.Surname }}</td>
                     <td>{{ client.First_Name }}</td>
+                    <td>{{ client.Address_1 }}</td>
                 </tr>
             </tbody>
         </table>
