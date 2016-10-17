@@ -18,11 +18,6 @@ export class ClientViewComponent implements OnInit {
 
     constructor(private _clientService: ClientViewService) {}
 
-    // handleData(data : IClient[]) {
-    //     console.log(data);
-    //     this.clients = data;
-    // }
-
     ngOnInit() {
         // this._clientService.getClients(this.listFilter).subscribe(
         //     data => this.handleData(data),
