@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  isDarkTheme = false;
+  
   views: Object[] = [
     {
       name: "Appointments",

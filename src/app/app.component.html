@@ -1,47 +1,47 @@
+<div [class.dark-theme]="isDarkTheme">
+  <md-sidenav-layout fullscreen>
+    <md-sidenav #sidenav mode="side" class="app-sidenav">
+      <md-nav-list>
+        <div *ngFor="let view of views">
+          <a md-list-item [routerLink]="[view.route]">
+            <md-icon md-list-icon>{{view.icon}}</md-icon>
+            <span md-line>{{view.name}}</span>
+            <span md-line class="secondary">{{view.description}}</span>
+          </a>
+        </div>
+      </md-nav-list>
+    </md-sidenav>
 
+    <md-toolbar color="primary">
+      <button class="app-icon-button" (click)="sidenav.toggle()">
+        <i class="material-icons app-toolbar-menu">menu</i>
+      </button>
 
-<md-sidenav-layout fullscreen>
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    <md-nav-list>
-      <div *ngFor="let view of views">
-        <a md-list-item [routerLink]="[view.route]">
-          <md-icon md-list-icon>{{view.icon}}</md-icon>
-          <span md-line>{{view.name}}</span>
-          <span md-line class="secondary">{{view.description}}</span>
-        </a>
-      </div>
-    </md-nav-list>
-  </md-sidenav>
+      <span class="app-toolbar-filler">
+        Starter Angular-Cli App
+      </span>
 
-  <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button>
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
 
-    <span class="app-toolbar-filler">
-      Starter Angular-Cli App
-    </span>
+    <md-menu x-position="before" #menu="mdMenu">
+      <button md-menu-item (click)="showSettings()">Settings</button>
+      <button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
+    </md-menu>
 
-    <button md-icon-button [md-menu-trigger-for]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
-  </md-toolbar>
+    <div class="app-content">
+      <a [routerLink]="['/md']">Material Design</a>
+      <a [routerLink]="['/dashboard']">Dashboard</a>
+      <a [routerLink]="['/http']">Http</a>
+      <a [routerLink]="['/client-view']">Client</a>
+      <router-outlet></router-outlet>
+    </div>
 
-  <md-menu x-position="before" #menu="mdMenu">
-    <button md-menu-item (click)="showSettings()">Settings</button>
-    <button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
-  </md-menu>
+  </md-sidenav-layout>
 
-  <div class="app-content">
-    <a [routerLink]="['/md']">Material Design</a>
-    <a [routerLink]="['/dashboard']">Dashboard</a>
-    <a [routerLink]="['/http']">Http</a>
-    <a [routerLink]="['/client-view']">Client</a>
-    <router-outlet></router-outlet>
-  </div>
-
-</md-sidenav-layout>
-
-<span class="app-action">
-  <button md-fab><md-icon>check circle</md-icon></button>
-</span>
+  <span class="app-action">
+    <button md-fab><md-icon>check circle</md-icon></button>
+  </span>
+</div>
