@@ -24,16 +24,17 @@ export class ClientViewComponent implements OnInit {
         //     err => {} );
 
         this.getClients();
+                
     }
 
     onFilterChange() {
-        console.log('onFilterChange');
         this.getClients();
     }
     
     getClients() {
         this._clientService.getClients(this.listFilter).subscribe(
-            clients => this.clients = clients,
+            clients => { this.clients = clients; 
+                console.log(clients);},
             error => this.errorMessage = <any>error ); 
     }
 }

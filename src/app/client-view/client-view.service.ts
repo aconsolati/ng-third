@@ -17,6 +17,6 @@ export class ClientViewService {
             query += "&$filter=startswith(Client_Search,'pattern')";
             query = query.replace("pattern", listFilter);
         }
-        return this._api.getQuery(query);
+        return this._api.getQueryOdata(query);
     }
 }

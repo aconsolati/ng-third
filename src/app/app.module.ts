@@ -14,6 +14,7 @@ import { MaterialModule } from '@angular/material';
 import { BlueSkyApiService } from './services/bluesky-api.service'
 import { HttpDemoService } from './http-demo/http-demo.service'
 import { ClientViewService } from './client-view/client-view.service'
+import { ItemViewService } from './item-view/item-view.service'
 
 // components
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { MaterialDesignComponent } from './material-design/material-design.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpDemoComponent } from './http-demo/http-demo.component';
 import { ClientViewComponent } from './client-view/client-view.component';
+import { ItemViewComponent } from './item-view/item-view.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ClientViewComponent } from './client-view/client-view.component';
     MaterialDesignComponent,
     DashboardComponent,
     HttpDemoComponent,
-    ClientViewComponent
+    ClientViewComponent,
+    ItemViewComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { ClientViewComponent } from './client-view/client-view.component';
   providers: [
     BlueSkyApiService,
     HttpDemoService, 
-    ClientViewService],
+    ClientViewService,
+    ItemViewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

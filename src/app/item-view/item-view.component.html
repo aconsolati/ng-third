@@ -1,0 +1,36 @@
+<md-card class="app-input-section">
+    <md-input placeholder="Filter by"  [(ngModel)]='listFilter' (change)="onFilterChange()"></md-input>
+</md-card>
+
+<md-card>
+    <h3>Filter by: {{listFilter}}</h3>
+
+    <div class="table-responsive">
+        <table class="full-width" *ngIf="items && items.length">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Item Component Charge Pack</th>
+                    <th>Item On Hand</th>
+                    <th>Service</th>
+                    <th>MostRecentlyUsedConsult</th>
+                    <th>PP Type</th>
+                </tr>                    
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{ item.Code }}</td>
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Type }}</td>
+                    <td>{{ item["Item Component Charge Pack"] }}</td>
+                    <td>{{ item["Item On Hand"] }}</td>
+                    <td>{{ item["Service"] }}</td>
+                    <td>{{ item["PP Type"] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-card>
+

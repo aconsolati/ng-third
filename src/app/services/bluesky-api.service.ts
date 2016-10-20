@@ -10,22 +10,38 @@ export class BlueSkyApiService {
   //private _url = "http://localhost:455/odata/Clients?$top=1";
   //private _url = "http://localhost:9041/api/values";
   //private _url = "http://localhost:455/odata/Version";
-  private _urlRoot = 'http://devplaybox.rxworks.com/rxapi/odata/';
+  private _urlRootOdata = 'http://devplaybox.rxworks.com/rxapi/odata/';
+  private _urlRoot = 'http://devplaybox.rxworks.com/rxapi/api/';
 
   constructor(private _http: Http) { }
 
   // odataQuery: the resource and any additional odata query params,
   // eg: Clients?$filter=startswith(Client_Search, 'smi')
-  getQuery(odataQuery: string): any {
+  getQueryOdata(odataQuery: string): any {
     
       // format request url
-      var url = this._urlRoot + odataQuery;
+      var url = this._urlRootOdata + odataQuery;
       console.log(url);
 
       // send request
       var headers = this.getHeaders();
       var result = this._http.get(url, { headers: headers })
           .map((response: Response) => response.json().value)
+          //.do(data => console.log("All: " + JSON.stringify(data)))
+          .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+      return result;
+  }
+
+  getQuery(commandType:string, command:string, odataQuery: string): any {
+    
+      // format request url
+      var url = this._urlRoot + commandType + "/" + command + "/" + odataQuery;
+      console.log(url);
+
+      // send request
+      var headers = this.getHeaders();
+      var result = this._http.get(url, { headers: headers })
+          .map((response: Response) => response.json())
           //.do(data => console.log("All: " + JSON.stringify(data)))
           .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
       return result;
