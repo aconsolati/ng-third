@@ -10,12 +10,15 @@ export class ItemViewService {
     constructor(private _api: BlueSkyApiService) { }
 
     getItems(listFilter: string): Observable<IItem[]> {
-        var query = "?word=Insulin";
-        if (listFilter && listFilter.length > 0)
+        if (!listFilter || listFilter.length == 0)
         {
-            query = "?word=*pattern";
-            query = query.replace("*pattern", listFilter);
+            // must supply a filter word
+            return new Observable<IItem[]>();
         }
+
+        var query = "?word=*pattern";
+        query = query.replace("*pattern", listFilter);
+
         console.log(query);
         return this._api.getSearch("Items", query);
     }

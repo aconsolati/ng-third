@@ -17,18 +17,12 @@ export class AppComponent {
       route: "/md"
     },
     {
-      name: "Hospital Cases",
-      description: "Recently admitted patients",
+      name: "Clients",
+      description: "Search for clients",
       icon: "pets",
-      route: "/dashboard"
+      route: "/client-view"
     }
   ];
-
-  // openDialog() {
-  //   const config = new MdDialogConfig();
-  //   config.viewContainerRef = this.vcr;
-  //   this.dialog.open(SettingsDialog, config);
-  // }
 
   showSettings() {
     alert("Settings");

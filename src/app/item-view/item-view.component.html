@@ -11,7 +11,7 @@
                 <tr>
                     <th></th>
                     <th>Name</th>
-                    <th style="text-align: right;">Item On Hand</th>
+                    <th style="text-align: right;">On Hand</th>
                 </tr>                    
             </thead>
             <tbody>
@@ -20,7 +20,7 @@
                         <md-checkbox [checked]="false" id="{{ item.Code }}"></md-checkbox>
                     </td>
                     <td>{{ item.Name }}</td>
-                    <td style="text-align: right;">{{ item["Item On Hand"] }}</td>
+                    <td style="text-align: right;">{{ item.Item_On_Hand }}</td>
                 </tr>
             </tbody>
         </table>

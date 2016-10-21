@@ -12,7 +12,7 @@ export class ItemViewComponent implements OnInit {
    
     errorMessage: string;
     items: IItem[];
-    listFilter: string;
+    listFilter: string = "Insulin";
     nowLoading: boolean;
 
     constructor(private _itemService: ItemViewService) {}
