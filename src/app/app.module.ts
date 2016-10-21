@@ -15,7 +15,6 @@ import { MaterialModule } from '@angular/material';
 
 // services
 import { BlueSkyApiService } from './services/bluesky-api.service'
-import { HttpDemoService } from './http-demo/http-demo.service'
 import { ClientViewService } from './client-view/client-view.service'
 import { ItemViewService } from './item-view/item-view.service'
 import { ItemBatchViewService } from './item-batch-view/item-batch-view.service'
@@ -24,7 +23,6 @@ import { ItemBatchViewService } from './item-batch-view/item-batch-view.service'
 import { AppComponent } from './app.component';
 import { MaterialDesignComponent } from './material-design/material-design.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpDemoComponent } from './http-demo/http-demo.component';
 import { ClientViewComponent } from './client-view/client-view.component';
 import { ItemViewComponent } from './item-view/item-view.component';
 import { ItemBatchViewComponent } from './item-batch-view/item-batch-view.component';
@@ -34,7 +32,6 @@ import { ItemBatchViewComponent } from './item-batch-view/item-batch-view.compon
     AppComponent,
     MaterialDesignComponent,
     DashboardComponent,
-    HttpDemoComponent,
     ClientViewComponent,
     ItemViewComponent,
     ItemBatchViewComponent
@@ -48,7 +45,6 @@ import { ItemBatchViewComponent } from './item-batch-view/item-batch-view.compon
   ],
   providers: [
     BlueSkyApiService,
-    HttpDemoService, 
     ClientViewService,
     ItemViewService,
     ItemBatchViewService],

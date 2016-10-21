@@ -34,7 +34,6 @@ export class BlueSkyApiService {
 
   // execute a search for a given searchType (eg 'patients')
   // eg searchType = "ItemBatches", queryString = "?itemCodes=191970&stockLocationID=1"
-  //getQuery(commandType: string, command: string, queryString: string): any {
   getSearch(searchType: string, queryString: string): any {
  
       // format request url
@@ -60,9 +59,11 @@ export class BlueSkyApiService {
     return headers;
   }
 
+  // endpoint for OData queries
   getUrlOData(): string {
       return this._urlRoot + "odata/";
   }
+  // endpoint for general api (non-OData) requests
   getUrlApi(): string {
       return this._urlRoot + "api/";
   }
