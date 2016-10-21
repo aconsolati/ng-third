@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IItemBatch } from './item-batch';
+import { IItemStockBatchOnHandInfo } from './item-batch';
 import { ItemBatchViewService } from './item-batch-view.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ItemBatchViewService } from './item-batch-view.service';
 export class ItemBatchViewComponent implements OnInit {
    
     errorMessage: string;
-    itemBatches: IItemBatch[];
+    itemBatches: IItemStockBatchOnHandInfo[];
     listFilter: string;
 
     constructor(private _itemService: ItemBatchViewService) {}

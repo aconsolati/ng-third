@@ -1,15 +1,15 @@
-export interface IItemStock {
-    "DisplayName": string,
-    "Item_Code": number,
-    "Item_Service": string,
-    "Item_Name": string,
-    "Item_Standard_Fee": number,
-    "Item_Deactivated_Date": string,
-    "Charge_Procedure_Only": boolean,
-    "Item_Component_Charge_Pack": boolean
-}
+//export interface IItemStock {
+//    "DisplayName": string,
+//    "Item_Code": number,
+//    "Item_Service": string,
+//    "Item_Name": string,
+//    "Item_Standard_Fee": number,
+//    "Item_Deactivated_Date": string,
+//    "Charge_Procedure_Only": boolean,
+//    "Item_Component_Charge_Pack": boolean
+//}
 
-export interface IBatchItem {
+export interface IItemBrandBatchStockLevelInfo {
         "ItemCode": number,
         "StockLocationID": number,
         "BatchNumber": string,
@@ -28,12 +28,18 @@ export interface IItemStockControl {
       "Item_Ideal_Level": number,
       "Item_Critical_Level": number,
       "Item_On_Hand": number,
-      "Item": IItemStock
+  //    "Item": IItemStock
 }
 
-export interface IItemBatch {
+export interface IItemStockBatchOnHandInfo {
     "ItemStockControl": IItemStockControl,
-    "UnitsOnHand": number,
-    "Batches": IBatchItem[],
-    "HasBatches": boolean
+    UnitsOnHand: string,
+    "Batches": IItemBrandBatchStockLevelInfo[],
+    HasBatches: string
 }
+
+/*
+export interface IItemStockBatchOnHandInfo {
+    IItemStockBatchOnHandInfoItems: IItemStockBatchOnHandInfo[],
+}
+*/

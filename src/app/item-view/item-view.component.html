@@ -3,25 +3,22 @@
 </md-card>
 
 <md-card>
-    <h3>Filter by: {{listFilter}}</h3>
-
     <div>
         <table class="table table-responsive full-width" *ngIf="items && items.length">
             <thead>
                 <tr>
                     <th></th>
                     <th>Name</th>
-                    <th>Item On Hand</th>
+                    <th style="text-align: right;">Item On Hand</th>
                 </tr>                    
             </thead>
             <tbody>
                 <tr *ngFor="let item of items">
                     <td>
-                        <md-checkbox [checked]="false"></md-checkbox>
-                        <input type="hidden" value="{{ item.Code }}">
+                        <md-checkbox [checked]="false" id="{{ item.Code }}"></md-checkbox>
                     </td>
                     <td>{{ item.Name }}</td>
-                    <td>{{ item["Item On Hand"] }}</td>
+                    <td style="text-align: right;">{{ item["Item On Hand"] }}</td>
                 </tr>
             </tbody>
         </table>
