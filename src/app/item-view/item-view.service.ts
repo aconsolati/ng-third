@@ -17,6 +17,6 @@ export class ItemViewService {
             query = query.replace("*pattern", listFilter);
         }
         console.log(query);
-        return this._api.getQuery("Search", "Items", query);
+        return this._api.getSearch("Items", query);
     }
 }

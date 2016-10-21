@@ -10,8 +10,8 @@ export class BlueSkyApiService {
   //private _url = "http://localhost:455/odata/Clients?$top=1";
   //private _url = "http://localhost:9041/api/values";
   //private _url = "http://localhost:455/odata/Version";
-  private _urlRootOdata = 'http://devplaybox.rxworks.com/rxapi/odata/';
-  private _urlRoot = 'http://devplaybox.rxworks.com/rxapi/api/';
+  private _urlRoot = 'http://devplaybox.rxworks.com/rxapi/';
+
 
   constructor(private _http: Http) { }
 
@@ -20,7 +20,7 @@ export class BlueSkyApiService {
   getQueryOdata(odataQuery: string): any {
     
       // format request url
-      var url = this._urlRootOdata + odataQuery;
+      var url = this.getUrlOData() + odataQuery;
       console.log(url);
 
       // send request
@@ -32,10 +32,13 @@ export class BlueSkyApiService {
       return result;
   }
 
-  getQuery(commandType:string, command:string, odataQuery: string): any {
-    
+  // execute a search for a given searchType (eg 'patients')
+  // eg searchType = "ItemBatches", queryString = "?itemCodes=191970&stockLocationID=1"
+  //getQuery(commandType: string, command: string, queryString: string): any {
+  getSearch(searchType: string, queryString: string): any {
+ 
       // format request url
-      var url = this._urlRoot + commandType + "/" + command + "/" + odataQuery;
+      var url = this.getUrlApi() + "Search/" + searchType + queryString;
       console.log(url);
 
       // send request
@@ -55,5 +58,12 @@ export class BlueSkyApiService {
     headers.append("Clinic-Code", "1");
     headers.append("Content-Type", "application/json");
     return headers;
+  }
+
+  getUrlOData(): string {
+      return this._urlRoot + "odata/";
+  }
+  getUrlApi(): string {
+      return this._urlRoot + "api/";
   }
 }

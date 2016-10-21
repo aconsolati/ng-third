@@ -11,7 +11,6 @@ import { ClientViewService } from './client-view.service';
 })
 export class ClientViewComponent implements OnInit {
    
-    //pageTitle: string = "Client List";
     errorMessage: string;
     clients: IClient[];
     listFilter: string;
@@ -19,12 +18,7 @@ export class ClientViewComponent implements OnInit {
     constructor(private _clientService: ClientViewService) {}
 
     ngOnInit() {
-        // this._clientService.getClients(this.listFilter).subscribe(
-        //     data => this.handleData(data),
-        //     err => {} );
-
-        this.getClients();
-                
+        this.getClients();             
     }
 
     onFilterChange() {

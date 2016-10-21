@@ -10,11 +10,10 @@ export class ClientViewService {
     constructor(private _api: BlueSkyApiService) { }
 
     getClients(listFilter: string): Observable<IClient[]> {
-        //var query = "Clients?$top=20&$orderby=Client_Search";
         var query = "Clients?$top=20";
         if (listFilter && listFilter.length > 0)
         {
-            query += "&$filter=startswith(Client_Search,'pattern')";
+            query += "&$filter=startswith(Surname,'pattern')";
             query = query.replace("pattern", listFilter);
         }
         return this._api.getQueryOdata(query);
