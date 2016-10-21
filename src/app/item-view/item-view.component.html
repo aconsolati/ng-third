@@ -5,7 +5,7 @@
 <md-card>
     <div>
         
-        <md-progress-circle mode="indeterminate" *ngIf="nowLoading" style="align:center;"></md-progress-circle>
+        <div style="display: flex; align-items: center;justify-content: center;"><span><md-spinner *ngIf="nowLoading"></md-spinner></span></div>
         <table class="table table-responsive full-width" *ngIf="items && items.length && !nowLoading">
             <thead>
                 <tr>

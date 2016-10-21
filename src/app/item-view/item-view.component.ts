@@ -19,7 +19,7 @@ export class ItemViewComponent implements OnInit {
 
     ngOnInit() {
         this.getItems();
-        this.nowLoading = false;
+        this.nowLoading = true;
         console.log(this.items);
         console.log(this.nowLoading);
     }
