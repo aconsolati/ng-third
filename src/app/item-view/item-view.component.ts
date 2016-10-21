@@ -13,12 +13,15 @@ export class ItemViewComponent implements OnInit {
     errorMessage: string;
     items: IItem[];
     listFilter: string;
+    nowLoading: boolean;
 
     constructor(private _itemService: ItemViewService) {}
 
     ngOnInit() {
         this.getItems();
+        this.nowLoading = false;
         console.log(this.items);
+        console.log(this.nowLoading);
     }
 
     onFilterChange() {
@@ -27,9 +30,12 @@ export class ItemViewComponent implements OnInit {
     }
     
     getItems() {
+        this.nowLoading = true;
         this._itemService.getItems(this.listFilter).subscribe(
             item => { this.items = item; 
-                console.log(item); },
-            error => this.errorMessage = <any>error ); 
+                console.log(item);
+                this.nowLoading = false; },
+            error => {this.errorMessage = <any>error;
+                this.nowLoading = false;} ); 
     }
 }

@@ -4,7 +4,9 @@
 
 <md-card>
     <div>
-        <table class="table table-responsive full-width" *ngIf="items && items.length">
+        
+        <md-progress-circle mode="indeterminate" *ngIf="nowLoading" style="align:center;"></md-progress-circle>
+        <table class="table table-responsive full-width" *ngIf="items && items.length && !nowLoading">
             <thead>
                 <tr>
                     <th></th>
