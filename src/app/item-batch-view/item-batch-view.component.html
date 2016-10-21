@@ -6,24 +6,27 @@
 <md-card>
     <h3>Filter by: {{listFilter}}</h3>
 
-    <div class="table-responsive">
-        <table class="full-width" *ngIf="itembatches && itembatches.length">
+    <div>
+        <table class="table table-responsive full-width" *ngIf="itemBatches && itemBatches.length">
             <thead>
                 <tr>
                     <th>Item Code</th>
-                    <th>Stock Location ID</th>
+                    <th>Item_Name</th>
                     <th>Item Ideal Level</th>
                     <th>Item Critical Level</th>
                     <th>Item On Hand</th>
+                    <th>New</th>
                 </tr>                    
             </thead>
             <tbody>
-                <tr *ngFor="let itembatch of itembatches">
+                <tr *ngFor="let itembatch of itemBatches">
+                    
                     <td>{{ itembatch.ItemStockControl.Item_Code }}</td>
-                    <td>{{ itembatch.Batches[0].StockLocationID }}</td>
+                    <td>{{ itembatch.Batches[0].Item_Name }}</td>
                     <td>{{ itembatch.ItemStockControl.Item_Ideal_Level }}</td>
                     <td>{{ itembatch.ItemStockControl.Item_Critical_Level }}</td>
-                    <td>{{ itembatch.ItemStockControl.Item_On_Hand }}</td>
+                    <td>{{ itembatch.UnitsOnHand }}</td>
+                    <td><md-input placeholder="New Qty"  [(ngModel)]='listFilter' (change)="onNewQtyChange()"></md-input></td>
                 </tr>
             </tbody>
         </table>
