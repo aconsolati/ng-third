@@ -6,6 +6,7 @@ import { MaterialDesignComponent } from './material-design/material-design.compo
 import { HttpDemoComponent } from './http-demo/http-demo.component';
 import { ClientViewComponent } from './client-view/client-view.component';
 import { ItemViewComponent } from './item-view/item-view.component';
+import { ItemBatchViewComponent } from './item-batch-view/item-batch-view.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'http', component: HttpDemoComponent },
   { path: 'client-view', component: ClientViewComponent },
-  { path: 'item-view', component: ItemViewComponent }
+  { path: 'item-view', component: ItemViewComponent },
+  { path: 'item-batch-view', component: ItemBatchViewComponent }
 ];
 
 @NgModule({

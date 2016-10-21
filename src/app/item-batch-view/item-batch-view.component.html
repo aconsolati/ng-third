@@ -1,0 +1,32 @@
+<h1>Item Batches</h1>
+<md-card class="app-input-section">
+    <md-input placeholder="Filter by"  [(ngModel)]='listFilter' (change)="onFilterChange()"></md-input>
+</md-card>
+
+<md-card>
+    <h3>Filter by: {{listFilter}}</h3>
+
+    <div class="table-responsive">
+        <table class="full-width" *ngIf="itembatches && itembatches.length">
+            <thead>
+                <tr>
+                    <th>Item Code</th>
+                    <th>Stock Location ID</th>
+                    <th>Item Ideal Level</th>
+                    <th>Item Critical Level</th>
+                    <th>Item On Hand</th>
+                </tr>                    
+            </thead>
+            <tbody>
+                <tr *ngFor="let itembatch of itembatches">
+                    <td>{{ itembatch.ItemStockControl.Item_Code }}</td>
+                    <td>{{ itembatch.Batches[0].StockLocationID }}</td>
+                    <td>{{ itembatch.ItemStockControl.Item_Ideal_Level }}</td>
+                    <td>{{ itembatch.ItemStockControl.Item_Critical_Level }}</td>
+                    <td>{{ itembatch.ItemStockControl.Item_On_Hand }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-card>
+

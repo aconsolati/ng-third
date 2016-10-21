@@ -32,11 +32,12 @@
     </md-menu>
 
     <div class="app-content">
-      <a [routerLink]="['/md']">Material Design</a>
-      <a [routerLink]="['/dashboard']">Dashboard</a>
-      <a [routerLink]="['/http']">Http</a>
-      <a [routerLink]="['/client-view']">Client</a>
-      <a [routerLink]="['/item-view']">Item</a>
+      <button md-raised-button [routerLink]="['/md']" >Material Design</button>
+      <button md-raised-button [routerLink]="['/dashboard']">Dashboard</button>
+      <button md-raised-button [routerLink]="['/http']">Http</button>
+      <button md-raised-button [routerLink]="['/client-view']">Client</button>
+      <button md-raised-button [routerLink]="['/item-view']">Item</button>
+      <button md-raised-button [routerLink]="['/item-batch-view']">Item Batch</button>
       <router-outlet></router-outlet>
     </div>
 
