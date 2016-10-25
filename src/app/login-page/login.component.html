@@ -1,0 +1,24 @@
+<div class="container" >
+        <div class="title">
+            <h2>Please Login</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="input-field col s12">
+                    <md-input [(ngModel)]="user.email" id="email" 
+                        type="email" class="validate" placeholder="Email"></md-input>
+                </div>
+            </div>            
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <md-input [(ngModel)]="user.password" id="password" 
+                        type="password" class="validate" placeholder="Password"></md-input>
+                </div>
+            </div>
+
+            <span>{{errorMsg}}</span>
+            <button md-raised-button color="accent" (click)="login()" 
+                type="submit" name="action">Login</button>
+        </div>
+    </div>

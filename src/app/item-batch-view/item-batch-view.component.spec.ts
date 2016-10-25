@@ -5,7 +5,7 @@ import { ItemBatchViewComponent } from './item-batch-view.component';
 
 describe('Component: ItemBatchView', () => {
   it('should create an instance', () => {
-    let component = new ItemBatchViewComponent();
+    let component = new ItemBatchViewComponent(null);
     expect(component).toBeTruthy();
   });
 });

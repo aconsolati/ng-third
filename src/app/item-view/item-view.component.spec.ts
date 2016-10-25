@@ -5,7 +5,7 @@ import { ItemViewComponent } from './item-view.component';
 
 describe('Component: ItemView', () => {
   it('should create an instance', () => {
-    let component = new ItemViewComponent();
+    let component = new ItemViewComponent(null);
     expect(component).toBeTruthy();
   });
 });

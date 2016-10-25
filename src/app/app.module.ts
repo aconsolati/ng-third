@@ -26,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientViewComponent } from './client-view/client-view.component';
 import { ItemViewComponent } from './item-view/item-view.component';
 import { ItemBatchViewComponent } from './item-batch-view/item-batch-view.component';
+import { LoginComponent } from './login-page/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ItemBatchViewComponent } from './item-batch-view/item-batch-view.compon
     DashboardComponent,
     ClientViewComponent,
     ItemViewComponent,
-    ItemBatchViewComponent
+    ItemBatchViewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

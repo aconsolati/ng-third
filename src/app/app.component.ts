@@ -21,7 +21,19 @@ export class AppComponent {
       description: "Search for clients",
       icon: "pets",
       route: "/client-view"
-    }
+    },
+    {
+      name: "Items",
+      description: "Search for items",
+      icon: "pets",
+      route: "/item-view"
+    },
+    {
+      name: "ItemBatches",
+      description: "Search for item batches",
+      icon: "pets",
+      route: "/item-batch-view"
+    }    
   ];
 
   showSettings() {

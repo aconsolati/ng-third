@@ -18,7 +18,7 @@
       </button>
 
       <span class="app-toolbar-filler">
-        Starter Angular-Cli App
+        BlueSky Stock Take App
       </span>
 
       <button md-icon-button [md-menu-trigger-for]="menu">
@@ -32,11 +32,12 @@
     </md-menu>
 
     <div class="app-content">
-      <button md-raised-button [routerLink]="['/md']" >Material Design</button>
-      <button md-raised-button [routerLink]="['/dashboard']">Dashboard</button>
+      <button md-raised-button [routerLink]="['/login']">Login</button>
       <button md-raised-button [routerLink]="['/client-view']">Client</button>
       <button md-raised-button [routerLink]="['/item-view']">Item</button>
       <button md-raised-button [routerLink]="['/item-batch-view']">Item Batch</button>
+      <button md-raised-button [routerLink]="['/md']" >Material Design</button>
+      <button md-raised-button [routerLink]="['/dashboard']">Dashboard</button>
       <router-outlet></router-outlet>
     </div>
 
